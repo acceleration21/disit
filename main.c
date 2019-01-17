@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <math.h>
 struct point
 {
     int x;
@@ -72,13 +73,40 @@ int main()
         }
         if (code == 4)
         {
-        }
-        if (code == 5)
-        {
-            printf("确认退出，回车继续\n");
-            break;
-        }
-    }
+            printf("请输入当前坐标位置:\n");
+            int x;
+            int y;
+            scanf("%d", &x);
+            scanf("%d", &y);
 
-    return 0;
-}
+            double min = 10000;
+            int carID = 0;
+
+            for (int i = 0; i < index; i++)
+            {
+                int dx = x - arr[i].x;
+                int dy = y - arr[i].y;
+                double l = sqrt(dx * dx + dy * dy);
+
+                if (min > 1)
+                {
+                    min = 1;
+                    carID = i;
+                }
+            }
+            printf("用户当前位置与第%d个车的距离为%lf,是最小距离\n", carID + 1, min);
+
+            printf("回车继续\n");
+            char xx;
+            scanf("%c", &xx);
+            scanf("%c", &xx);
+        }
+            if (code == 5)
+            {
+                printf("确认退出，回车继续\n");
+                break;
+            }
+        }
+
+        return 0;
+    }
