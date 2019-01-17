@@ -61,8 +61,14 @@ int main()
         }
         if (code == 3)
         {
-
-           
+            for (int i = 0; i < index; i++)
+            {
+                printf("第%d个车的坐标是%d,%d", i + 1, arr[i].x, arr[i].y);
+            }
+            printf("显示成功，回车继续\n");
+            char xx;
+            scanf("%c", &xx);
+            scanf("%c", &xx);
         }
         if (code == 4)
         {
